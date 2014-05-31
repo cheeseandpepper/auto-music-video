@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'pry'
 gem 'ruby-echonest'
 gem 'aws-s3', :require => 'aws/s3'
 
