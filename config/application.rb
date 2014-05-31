@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module AutoMusicVideo
   class Application < Rails::Application
+    config.encoding = "utf-8"
+    # config.filter_parameters += [:password]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -19,5 +21,13 @@ module AutoMusicVideo
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    AWS::S3::Base.establish_connection!(
+        :access_key_id => 'AKIAICRCZ64QDGNZ4B7A',
+        :secret_access_key => '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'
+    )
+    
+    BUCKET = 'automusicvideosongs'
+
   end
 end
