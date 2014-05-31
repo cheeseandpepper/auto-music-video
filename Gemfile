@@ -30,6 +30,7 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'ruby-echonest'
+gem 'aws-s3', :require => 'aws/s3'
 
 # Use unicorn as the app server
 # gem 'unicorn'
