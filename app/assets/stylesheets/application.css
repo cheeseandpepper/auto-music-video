@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+
+.music-video-container{
+
+  width: 600px;
+  height: 400px;
+}

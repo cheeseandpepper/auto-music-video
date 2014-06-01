@@ -4,10 +4,10 @@ module ApplicationHelper
     #binding.pry
   end
 
-  def json
-    @json = JSON.parse(`curl -X POST 'http://developer.echonest.com/api/v4/track/upload' -d 'api_key=ZLPOL4KMABYSTIM8A&url=#{@song_url}&bucket=audio_summary'`)
-    @id = @json["response"]["track"]["id"]
-  end
+  # def json
+  #   @json = JSON.parse(`curl -X POST 'http://developer.echonest.com/api/v4/track/upload' -d 'api_key=ZLPOL4KMABYSTIM8A&url=#{@song_url}&bucket=audio_summary'`)
+  #   @id = @json["response"]["track"]["id"]
+  # end
 
   def analysis_json
     JSON.parse(`curl -X GET "#{analysis_url}"`)
@@ -15,6 +15,10 @@ module ApplicationHelper
 
 
   def analysis_url
+    @json = JSON.parse(`curl -X POST 'http://developer.echonest.com/api/v4/track/upload' -d 'api_key=ZLPOL4KMABYSTIM8A&url=#{@song_url}&bucket=audio_summary'`)
+    #binding.pry
+    @id = @json["response"]["track"]["id"]
+
     url = "http://developer.echonest.com/api/v4/track/profile?api_key=ZLPOL4KMABYSTIM8A&format=json&id="
     track_id = @id
     bucket = "&bucket=audio_summary"

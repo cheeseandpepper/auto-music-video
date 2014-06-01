@@ -2,6 +2,8 @@ class SongsController < ApplicationController
 
   def index
     @songs = AWS::S3::Bucket.find('automusicvideosongs').objects # NameError (uninitialized constant SongsController::BUCKET)
+    #@song_url = AWS::S3::S3Object.url_for(song_key, 'automusicvideosongs', :authenticated => false)
+    #@meta_data = view_context.analysis_json
   end
 
   def upload
